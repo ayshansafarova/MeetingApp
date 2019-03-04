@@ -1,7 +1,7 @@
 body{
-    background-color: cadetblue;
+    background-color: whitesmoke;
 }
 
-nav{
-    background-color: #afcdce !important;
+form>div{
+    margin: 0 auto !important;
 }

@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {Router} from '@reach/router';
+import firebase from './data-provider/firebase';
 import './App.css';
+
 import Home from './components/home/home';
+import Welcome from './components/home/welcome';
+import Navigation from './components/navigation/navigation';
+import Login from './components/account/login';
+import Register from './components/account/register';
+import Meetings from './components/meeting/meetings';
 
 class App extends Component {
   constructor() {
@@ -10,11 +17,33 @@ class App extends Component {
       user: null
     };
   }
+
+  componentDidMount(){
+    const ref = firebase.database().ref('user');
+
+    ref.on('value', snapshot => {
+      let u = snapshot.val();
+      this.setState({ user: u});
+    })
+  }
+
   render() {
     return (
-      <Home user={this.state.user}/>
+      <div>
+        <Navigation user={this.state.user}/>
+        {this.state.user && <Welcome user = {this.state.user}/>}
+
+        <Router>
+          <Home path = "/" user={this.state.user}/>
+          <Login path = "/login" />
+          <Register path = "/register" />
+          <Meetings path = "/meetings" />
+        </Router>
+      </div>
     );
   }
 }
 
 export default App;
+
+
