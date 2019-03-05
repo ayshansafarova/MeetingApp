@@ -41,7 +41,7 @@ class Register extends Component {
                   <div className="form-row">
                   { this.state.errorMessage !== null ? (
                       <FormError theMessage = {this.state.errorMessage} />
-                  )}
+                  ) : null}
                     <section className="col-sm-12 form-group">
                       <label
                         className="form-control-label sr-only"
@@ -57,7 +57,7 @@ class Register extends Component {
                         name="displayName"
                         required
                         value = {this.state.displayName}
-                        onChange = {this.state.handleChange}
+                        onChange = {this.handleChange}
                       />
                     </section>
                   </div>
@@ -76,7 +76,7 @@ class Register extends Component {
                       required
                       name="email"
                       value = {this.state.email}
-                      onChange = {this.state.handleChange}
+                      onChange = {this.handleChange}
                     />
                   </section>
                   <div className="form-row">
@@ -87,7 +87,7 @@ class Register extends Component {
                         name="passOne"
                         placeholder="Password"
                         value = {this.state.passOne}
-                        onChange = {this.state.handleChange}
+                        onChange = {this.handleChange}
                       />
                     </section>
                     <section className="col-sm-6 form-group">
@@ -98,7 +98,7 @@ class Register extends Component {
                         name="passTwo"
                         placeholder="Repeat Password"
                         value = {this.state.passTwo}
-                        onChange = {this.state.handleChange}
+                        onChange = {this.handleChange}
                       />
                     </section>
                   </div>
