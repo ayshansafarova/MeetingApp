@@ -26,7 +26,9 @@ class Home extends Component {
                                 </div>
                             )}
                             {user && (
+                                <div>
                                 <Link to="/meetings" className="btn m-1 btn-outline-secondary" type="button">Meetings</Link>                        
+                                </div>
                             )}
                             </form>
                         </div>
