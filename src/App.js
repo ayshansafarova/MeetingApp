@@ -21,12 +21,21 @@ class App extends Component {
   }
 
   componentDidMount(){
-    const ref = firebase.database().ref('user');
+    firebase.auth().onAuthStateChanged(u => {
+      if(u){
+        this.setState({
+          user: u,
+          displayName: u.displayName,
+          userID: u.uid
+        });
+      }
+    });
+    // const ref = firebase.database().ref('user');
 
-    ref.on('value', snapshot => {
-      let u = snapshot.val();
-      this.setState({ user: u});
-    })
+    // ref.on('value', snapshot => {
+    //   let u = snapshot.val();
+    //   this.setState({ user: u});
+    // })
   }
 
   registerUser = userName => {
@@ -44,11 +53,26 @@ class App extends Component {
     })
   }
 
+  logoutUser = e => {
+    e.preventDefault();
+    this.setState({
+      user: null,
+      displayName: null,
+      userID: null
+    });
+
+    firebase.auth().signOut().then(() => {
+      navigate('/login');
+    })
+  }
+
   render() {
     return (
       <div>
-        <Navigation user={this.state.user}/>
-        {this.state.user && <Welcome user = {this.state.displayName}/>}
+        <Navigation user={this.state.user} logoutUser = {this.logoutUser}/>
+        {this.state.user && 
+          <Welcome userName = {this.state.displayName}/>
+        }
 
         <Router>
           <Home path = "/" user={this.state.user}/>

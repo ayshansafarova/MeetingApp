@@ -4,11 +4,11 @@ import './home.css';
 
 class Welcome extends Component {
     render() {
-        let {user} = this.props;
+        let {userName} = this.props;
         return(
             <div className="text-center">
                         <h5 className="text-secondary text-center font-weight-bold m-2">
-                            Welcome, {user}
+                            Welcome, {userName}
                         </h5>
             </div>
         );
