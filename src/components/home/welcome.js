@@ -7,9 +7,9 @@ class Welcome extends Component {
         let {user} = this.props;
         return(
             <div className="text-center">
-                        <span className="text-secondary text-center font-weight-bold">
+                        <h5 className="text-secondary text-center font-weight-bold m-2">
                             Welcome, {user}
-                        </span>
+                        </h5>
             </div>
         );
     }
