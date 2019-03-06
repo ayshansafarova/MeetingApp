@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import firebase from '../data-provider/firebase';
 import { navigate } from '@reach/router';
 import {GoTrashcan} from 'react-icons/go';
-import { FaLink } from 'react-icons/fa';
+import { FaUserPlus, FaUsers } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class MeetingsList extends Component {
@@ -30,7 +30,12 @@ class MeetingsList extends Component {
                         <button className="btn btn-sm btn-secondary-outline" 
                         title = "Check in" 
                         onClick={() => navigate(`/checkin/${this.props.userID}/${item.meetingID}`)} >
-                            <FaLink />
+                            <FaUserPlus />
+                        </button>
+                        <button className="btn btn-sm btn-secondary-outline" 
+                        title = "Attendees list" 
+                        onClick={() => navigate(`/attendees/${this.props.userID}/${item.meetingID}`)} >
+                            <FaUsers />
                         </button>
                     </section>
                     <section className="pl-3 align-self-center text-left">

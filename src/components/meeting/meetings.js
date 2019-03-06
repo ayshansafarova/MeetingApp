@@ -65,7 +65,7 @@ class Meetings extends Component {
                     <div className="card border-top-0 rounded-0 ">
                         {/* {this.props.meetings && this.props.meetings.length ? ( */}
                             <div className="card-body py-2">
-                                <h4 className="card-title m-0 font-weight-light">
+                                <h4 className="card-title m-0 font-weight-light" style={{color: '#980cb2'}}>
                                     Your meetings
                                 </h4>
                             </div>
