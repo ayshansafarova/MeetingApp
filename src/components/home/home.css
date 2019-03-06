@@ -5,3 +5,11 @@ body{
 form>div{
     margin: 0 auto !important;
 }
+
+.star-yellow{
+    color: yellow;
+}
+
+.star-black{
+    color: grey;
+}

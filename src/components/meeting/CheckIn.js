@@ -31,7 +31,8 @@ class CheckIn extends Component {
         //creates attendees in meetings folder
         ref.push({
             attendeeName: this.state.displayName,
-            attendeeEmail: this.state.email
+            attendeeEmail: this.state.email,
+            star: false
         })
 
         navigate(`/attendees/${this.props.userID}/${this.props.meeetingID}`);
