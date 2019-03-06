@@ -9,6 +9,7 @@ import Navigation from './components/navigation/navigation';
 import Login from './components/account/login';
 import Register from './components/account/register';
 import Meetings from './components/meeting/meetings';
+import CheckIn from './components/meeting/CheckIn';
 
 class App extends Component {
   constructor() {
@@ -93,6 +94,7 @@ class App extends Component {
     const ref = firebase
     .database()
     .ref(`meetings/${this.state.user.uid}`);
+    //creates meetings folder 
     ref.push({meetingName: meetingName});
   }
 
@@ -108,7 +110,11 @@ class App extends Component {
           <Home path = "/" user={this.state.user}/>
           <Login path = "/login" />
           <Register path = "/register" registerUser = {this.registerUser}/>
-          <Meetings path = "/meetings" addMeeting = {this.addMeeting} meetings = {this.state.meetings}/>
+          <Meetings path = "/meetings" 
+          addMeeting = {this.addMeeting} meetings = {this.state.meetings}
+          userID = {this.state.userID}
+          />
+          <CheckIn path = "/checkin/:userID/:meetingID" />
         </Router>
       </div>
     );
