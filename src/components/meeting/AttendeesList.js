@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import { GoTrashcan, GoStar, GoMail } from 'react-icons/go';
+import { GoTrashcan, GoMail, GoCheck } from 'react-icons/go';
 import firebase from '../data-provider/firebase';
 import '../home/home.css';
 
 class AttendeesList extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     deleteAttendee = (e, whichMeeting, whichAttendee) => {
         e.preventDefault();
@@ -52,7 +52,7 @@ class AttendeesList extends Component {
                                 title = "Give a star to an attendee"
                                 onClick = {e => this.toggleStar(e, item.star, this.props.meetingID, item.attendeeID)}
                                 >
-                                <GoStar/>
+                                <GoCheck/>
                                 </button>
                                 <a className="btn btn-sm btn-secondary" 
                                 href={`mailto: ${item.attendeeEmail}`}

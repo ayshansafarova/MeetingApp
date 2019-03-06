@@ -35,7 +35,7 @@ class CheckIn extends Component {
             star: false
         })
 
-        navigate(`/attendees/${this.props.userID}/${this.props.meeetingID}`);
+        navigate(`/attendees/${this.props.userID}/${this.props.meetingID}`);
     }
 
     render() {

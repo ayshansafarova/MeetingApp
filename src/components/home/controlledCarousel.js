@@ -1,8 +1,7 @@
-import { React, Component } from 'react';
-import Carousel from 'react-bootstrap/Carousel'
+import React, {Component } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
 
-
-class Carousel extends Component {
+class ControlledCarousel extends Component {
     constructor(props, context) {
         super(props, context);
     
@@ -33,37 +32,37 @@ class Carousel extends Component {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="holder.js/800x400?text=First slide&bg=373940"
-                alt="First slide"
+                src="https://www.w3schools.com/booTsTrap/ny.jpg"
+                alt="New York"
               />
               <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <h3>New York</h3>
+                <p>We love the Big Apple!</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="holder.js/800x400?text=Second slide&bg=282c34"
-                alt="Third slide"
+                src="https://www.w3schools.com/booTsTrap/chicago.jpg"
+                alt="Chicago"
               />
     
               <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago!</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="holder.js/800x400?text=Third slide&bg=20232a"
-                alt="Third slide"
+                src="https://www.w3schools.com/booTsTrap/la.jpg"
+                alt="Los Angeles"
               />
     
               <Carousel.Caption>
-                <h3>Third slide label</h3>
+                <h3>Los Angeles</h3>
                 <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                 LA is always so much fun!
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -72,6 +71,6 @@ class Carousel extends Component {
       }
 }
 
-export default Carousel;
+export default ControlledCarousel;
 
 // render(<Carousel />);

@@ -4,7 +4,7 @@ import firebase from './components/data-provider/firebase';
 import './App.css';
 
 import Home from './components/home/home';
-import Welcome from './components/home/welcome';
+// import Welcome from './components/home/welcome';
 import Navigation from './components/navigation/navigation';
 import Login from './components/account/login';
 import Register from './components/account/register';
@@ -87,7 +87,7 @@ class App extends Component {
     });
 
     firebase.auth().signOut().then(() => {
-      navigate('/login');
+      navigate('/');
     })
   }
 
@@ -103,9 +103,9 @@ class App extends Component {
     return (
       <div>
         <Navigation user={this.state.user} logoutUser = {this.logoutUser}/>
-        {this.state.user && 
+        {/* {this.state.user && 
           <Welcome userName = {this.state.displayName}/>
-        }
+        } */}
 
         <Router>
           <Home path = "/" user={this.state.user}/>

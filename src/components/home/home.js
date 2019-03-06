@@ -1,22 +1,23 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './home.css';
-import { Link } from '@reach/router';
+import ControlledCarousel from './controlledCarousel';
 
 class Home extends Component {
     render() {
-        let {user} = this.props;
+        // let {user} = this.props;
         return(
             <div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col">
-                            <div className="p-5 text-center">
+                <div className="container-width">
+                    <div className="">
+                        <div className="">
+                            {/*<div className="p-5 text-center">
                                Welcome to React Single Page App
-                            </div>
+        </div>*/}
+        <ControlledCarousel />
                         </div>
                     </div>
-                    <div className="row">
+                    {/* <div className="row"> 
                         <div className="col justify-content-center">
                             <form className="form-inline">
                             {user == null && (
@@ -32,7 +33,7 @@ class Home extends Component {
                             )}
                             </form>
                         </div>
-                    </div>
+                    </div>*/}
                 </div>
             </div>
         );
