@@ -39,7 +39,9 @@ class App extends Component {
           for(let item in m){
             meetingList.push({
               meetingID: item,
-              meetingName: m[item].meetingName
+              meetingName: m[item].meetingName,
+              meetingDate: m[item].meetingDate
+              // meeting date should be added
               //there was a problem . m[item] instead of item
             });
           }
@@ -55,12 +57,6 @@ class App extends Component {
         })
       }
     });
-    // const ref = firebase.database().ref('user');
-
-    // ref.on('value', snapshot => {
-    //   let u = snapshot.val();
-    //   this.setState({ user: u});
-    // })
   }
 
   registerUser = userName => {
@@ -91,12 +87,16 @@ class App extends Component {
     })
   }
 
-  addMeeting = meetingName => {
+  addMeeting = (meetingName, startDate) => {
     const ref = firebase
     .database()
     .ref(`meetings/${this.state.user.uid}`);
     //creates meetings folder 
-    ref.push({meetingName: meetingName});
+    ref.push({
+      meetingName: meetingName,
+      meetingDate: startDate
+      //should date
+    });
   }
 
   render() {
